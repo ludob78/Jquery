@@ -1,0 +1,12 @@
+#wrapper{
+margin: 0;
+    /*width: 50%;*/
+}
+img {
+    width: 700px;
+    border: 1px solid black;
+}
+
+#slider {
+    width: 700px;
+}

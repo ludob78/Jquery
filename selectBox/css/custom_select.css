@@ -1,0 +1,38 @@
+.custom_select{
+	display:inline-block;
+}
+
+.custom_select .btn{
+	border-radius: 5px;
+	border:1px solid #CCCCCC;
+	padding:5px;
+	display:inline-block;
+	margin-bottom:5px;
+}
+
+.custom_select .btn:hover{
+	cursor:pointer;
+}
+
+.custom_select .liste{
+	border-radius: 5px;
+	border:1px solid #CCCCCC;
+	padding:5px;
+	position:absolute;
+	background-color: #FFFFFF;
+}
+
+.custom_select .liste ul{
+	margin:0;
+	padding:0;
+	list-style-type: none;
+}
+
+.custom_select .liste ul li a{
+	text-decoration: none;
+	color: #000000;
+}
+
+.custom_select .liste ul li a:hover{
+	background-color: #EEEEEE;
+}

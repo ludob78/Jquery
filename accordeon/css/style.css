@@ -1,0 +1,31 @@
+html,body{
+    height: 100%;
+}
+#container {
+    width: 50%;
+    margin: 0 auto;
+}
+.accordeon{
+    height: 100%;
+}
+.accordeon h2:hover {
+    cursor: pointer;
+}
+.accordeon h2.active {
+    color: red;
+    background-color: blue;
+    transition: background-color 1s;
+}
+.accordeon h2 {
+    background-color: darkgrey;
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid black;
+    margin: 2px 0;
+    color: black;
+}
+.accordeon div {
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid black;
+}

@@ -1,0 +1,40 @@
+.container{
+    width: 70%;
+    margin: 0 auto;
+}
+.tabs{
+    padding: 5px;
+    border: black solid 1px;
+}
+.tabs ul{
+    margin: 0;
+    list-style: none;
+    padding: 5px 5px 0 5px;
+    border-radius: 5px;
+    background-color: darkgrey;
+    height: auto;
+    /*margin-bottom: -2px;*/
+}
+.tabs ul li{
+    display: inline-block;
+    background-color: lightgrey;
+    border-radius: 5px 5px 0 0;
+    border: 1px solid black;
+    padding: 5px 10px;
+    border-bottom: 0;
+}
+.tabs ul li:hover{
+    cursor: pointer;
+}
+.tabs ul li.active{
+    background-color: yellow;
+}
+.tabs div{
+    /*display: none;*/
+}
+.tabs div.visible{
+    /*display: block;*/
+}
+.border{
+    /*border: black solid 1px;*/
+}

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="../../$/jquery-3.2.1.min.js"></script>
+    <script src="jquery.voicerss-tts.min.js"></script>
+
+    <title>Document</title>
+    </head>
+<body>
+<textarea name="" id="speach" cols="30" rows="10"></textarea>
+<button id="lire">lire</button>
+<div id=""></div>
+<div class="speak">J'adore les carrottes</div>
+<div class="speak">Je ne veux pas aller à l'école</div>
+<div class="speak">J'adore les suchis</div>
+<script>
+    //permet de stopper la lecture en cours pour la recommencer du début
+    var audio=new Audio()
+        $('#lire').click(function () {
+      //  $.speech({
+            var data={
+            key:'f9dd0457e9d04e8c99c344f1458720fd',
+            src:$("#speach").val(),
+            hl:'fr-fr',
+            r:0,
+            c:'mp3',
+            f:'44khz_16bit_stereo',
+            ssml:false}
+      //  })
+            function _buildRequest(e) {
+                var a = e.c && "auto" != e.c.toLowerCase() ? e.c : this._detectCodec();
+                return "key=" + (e.key || "") + "&src=" + (e.src || "") + "&hl=" + (e.hl || "") + "&r=" + (e.r || "") + "&c=" + (a || "") + "&f=" + (e.f || "") + "&ssml=" + (e.ssml || "") + "&b64=true"
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "https://api.voicerss.org/",
+                contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+                data: _buildRequest(data),
+                dataType: "text",
+                success: function (e, a, c) {
+                    if (0 == e.indexOf("ERROR"))throw e;
+//                    var audio = new Audio(e)
+                    $(audio).attr("src",e)
+                    audio.load()
+                    audio.play();
+                    $(audio).on('ended',function () {
+                        $.speech({
+                            key:'f9dd0457e9d04e8c99c344f1458720fd',
+                            src:'test 2e speech',
+                            hl:'fr-ca',
+                            r:0,
+                            c:'mp3',
+                            f:'44khz_16bit_stereo',
+                            ssml:false
+                        })
+                    })
+                }
+            })
+
+    })
+    $('.speak').on("mouseover", function(){
+        $.speech({
+            key:'f9dd0457e9d04e8c99c344f1458720fd',
+            src:$(this).html(),
+            hl:'fr-fr',
+            r:0,
+            c:'mp3',
+            f:'',
+            ssml:false
+        })
+    })
+
+</script>
+
+</body>
+</html>
